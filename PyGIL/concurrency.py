@@ -82,7 +82,6 @@ urls = [
   'http://www.pixnet.net',
   'http://www.alibaba.com',
   'http://www.alipay.com',
-  'http://www.microsoftonline.com',
   'http://www.booking.com',
   'http://www.googleusercontent.com',
   'http://www.google.com.au',
@@ -117,14 +116,20 @@ def worker():
         requests.get(url)
         sys.stdout.write('Fetched url %s\n' % url)
 
-start = time.time()
-threads = []
-for _ in range(100):
-    t = threading.Thread(target=worker)
-    t.start()
-    threads.append(t)
 
-for t in threads:
-    t.join()
+def concurrency():
+    start = time.time()
+    threads = []
+    for _ in range(100):
+        t = threading.Thread(target=worker)
+        t.start()
+        threads.append(t)
 
-print('%.2f seconds' % (time.time() - start))
+    for t in threads:
+        t.join()
+
+    print('%.2f seconds' % (time.time() - start))
+
+
+if __name__ == "__main__":
+    concurrency()
