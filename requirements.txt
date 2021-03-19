@@ -27,7 +27,7 @@ graphene==2.1.8
 graphene-sqlalchemy==2.3.0
 graphql-core==2.3.2
 graphql-relay==2.0.1
-graphql-server-core==1.2.0
+graphql-server-core==1.2.0Pillow
 greenlet==1.0.0
 idna==2.8
 imageio==2.9.0
@@ -52,7 +52,11 @@ opencv-python==4.3.0.36
 parso==0.7.0
 pexpect==4.8.0
 pickleshare==0.7.5
+<<<<<<< Updated upstream
 Pillow==7.1.0
+=======
+Pillow==8.1.1
+>>>>>>> Stashed changes
 promise==2.3
 prompt-toolkit==3.0.5
 ptyprocess==0.6.0
