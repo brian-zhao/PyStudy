@@ -9,26 +9,19 @@ my_suburb = [
     "croydon park",
     "burwood height",
     "ashfield",
-    "canada bay",
-    "ashbury",
-]
-
-rel_paths = [
-    "20220606",
-    "20220613",
-    "20220620",
-    "20220627",
-    "20220704",
-    "20220711",
-    "20220718",
+    # "canada bay",
+    # "ashbury",
 ]
 
 if __name__ == "__main__":
     script_dir = os.path.dirname(__file__)  # <-- absolute dir the script is in
     files = []
-    for rel_path in rel_paths:
-        abs_file_path = os.path.join(script_dir, rel_path)
-        files.extend([file for file in glob.glob(abs_file_path + "/*")])
+    for file in os.listdir(script_dir):
+        d = os.path.join(script_dir, file)
+        if os.path.isdir(d):
+            abs_file_path = os.path.join(script_dir, d)
+            files.extend([file for file in glob.glob(abs_file_path + "/*")])
+
     result = []
     result.append(
         "addr1,addr2,addr3,addr4,suburb,postcode,area,area_unit,price,type,contract_date,settle_date"

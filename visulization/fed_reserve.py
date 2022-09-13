@@ -20,8 +20,8 @@ if __name__ == "__main__":
         x,
         y,
         color="g",
-        width=0.72,
-        label="Assets: Securities Held Outright: Mortgage-backed securities: Wednesday level",
+        width=0.5,
+        label="Mortgage-backed securities: Wednesday level",
     )
     plt.xlabel("Date")
     plt.ylabel("USD * 1000000")
